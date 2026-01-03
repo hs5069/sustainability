@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>溫室效應與全球暖化</title>
+    <style>
+        :root {
+            --kw-mechanism: #d9480f; /* 橘紅：原理 */
+            --kw-gas: #099268;       /* 綠色：氣體 */
+            --kw-impact: #1971c2;    /* 藍色：影響 */
+            --kw-policy: #7048e8;    /* 紫色：政策 */
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .teaching-block {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 { border-left: 5px solid #2c3e50; padding-left: 15px; color: #2c3e50; }
+
+        /* 關鍵字樣式 */
+        .k-m { color: var(--kw-mechanism); font-weight: bold; }
+        .k-g { color: var(--kw-gas); font-weight: bold; }
+        .k-i { color: var(--kw-impact); font-weight: bold; }
+        .k-p { color: var(--kw-policy); font-weight: bold; }
+
+        .image-placeholder {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        /* 互動練習題 */
+        .quiz-section {
+            background: #e9ecef;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .question-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .correct {
+            border-color: #28a745 !important;
+            background-color: #d4edda !important;
+        }
+
+        .incorrect {
+            border-color: #dc3545 !important;
+            background-color: #f8d7da !important;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+
+        button {
+            padding: 8px 18px;
+            border-radius: 5px;
+            border: none;
+            background: #495057;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:disabled { background: #ced4da; cursor: not-allowed; }
+        
+        .btn-check { background: #007bff; }
+        .btn-retry { background: #fd7e14; display: none; margin-left: 10px; }
+
+        /* 導覽列 */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-prev { background: #6c757d; color: white; }
+        .btn-next { background: #28a745; color: white; }
+        .btn-next.disabled { background: #ced4da; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+    <div class="teaching-block">
+        <h2>一、溫室效應原理</h2>
+        <p>1. <span class="k-m">太陽輻射</span>的部分能量能夠穿透大氣到達地表，當地表吸收太陽輻射之後，再將能量以<span class="k-m">紅外線</span>向外輻射，大氣中的<span class="k-g">溫室氣體</span>-<span class="k-g">水氣、二氧化碳及甲烷</span>等，吸收由地表輻射出來的紅外線，將熱能留在地表附近的大氣層中，使氣溫升高，此過程稱為<span class="k-m">溫室效應</span>。</p>
+        <p>2. 現今全球的地表平均溫度約為<span class="k-m">15℃</span>，若大氣中沒有溫室氣體，則溫度將會降至約攝氏<span class="k-m">零下十幾度</span>。</p>
+        <img src="3.png" alt="溫室效應示意圖" class="image-placeholder">
+    </div>
+
+    <div class="teaching-block">
+        <h2>二、全球暖化與加劇</h2>
+        <p>3. <span class="k-m">工業革命</span>後，人類活動使<span class="k-g">二氧化碳、甲烷</span>含量不斷上升，加劇溫室效應，造成了<span class="k-i">全球暖化</span>的現象。</p>
+        <img src="4.png" alt="二氧化碳濃度與溫度變化圖" class="image-placeholder">
+    </div>
+
+    <div class="teaching-block">
+        <h2>三、暖化影響與永續發展</h2>
+        <p>4. <strong>全球暖化造成的影響</strong>：<br>
+        (1) <span class="k-i">海平面上升</span>：山區及極地冰川的融化。<br>
+        (2) <span class="k-i">氣候改變</span>：增加乾旱、洪水、熱浪、寒潮等極端天氣的發生頻率。<br>
+        (3) <span class="k-i">氣候難民</span>：<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;a. <span class="k-i">吐瓦魯</span>共和國，因海平面上升威脅，居民被迫移民至紐西蘭。<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;b. 物種生活範圍移向<span class="k-i">高緯度</span>或面臨滅絕。</p>
+        <p>5. <strong>對台灣影響</strong>：<br>
+        (1) 豪雨日數略微上升 (2) 小雨日數顯著減少 (3) 持續往<span class="k-i">極端氣候</span>方向發展。</p>
+        <p>6. <strong>永續發展</strong>：<br>
+        (1) <span class="k-p">減緩</span>：減少排放量使影響和緩。<br>
+        (2) <span class="k-p">調適</span>：採取措施降低已發生或未來的風險。<br>
+        (3) 1997年<span class="k-p">京都議定書</span>；2015年<span class="k-p">巴黎協定</span>(控制升溫1.5∼2.0℃)；2012年發布17項<span class="k-p">SDGs</span>。</p>
+    </div>
+
+    <div class="quiz-section">
+        <h3>🎯 互動練習題</h3>
+
+        <div id="q1" class="question-card">
+            <p><strong>1. 溫室氣體主要是吸收地表向外輻射的哪一種能量，從而留住熱能？</strong></p>
+            <input type="radio" name="opt1" value="A"> A. 紫外線<br>
+            <input type="radio" name="opt1" value="B"> B. 紅外線<br>
+            <input type="radio" name="opt1" value="C"> C. X射線<br>
+            <button class="btn-check" id="chk1" onclick="checkQ1()" disabled>檢查答案</button>
+            <button class="btn-retry" id="retry1" onclick="resetQ1()">重做本題</button>
+            <div id="f1" class="feedback"></div>
+        </div>
+
+        <div id="q2" class="question-card">
+            <p><strong>2. (是非) 若地球大氣完全沒有溫室氣體，地表平均氣溫仍會維持在 15℃ 左右。</strong></p>
+            <input type="radio" name="opt2" value="T"> 正確<br>
+            <input type="radio" name="opt2" value="F"> 錯誤<br>
+            <button class="btn-check" id="chk2" onclick="checkQ2()" disabled>檢查答案</button>
+            <button class="btn-retry" id="retry2" onclick="resetQ2()">重做本題</button>
+            <div id="f2" class="feedback"></div>
+        </div>
+
+        <div id="q3" class="question-card">
+            <p><strong>3. (多選) 關於全球暖化對台灣及環境的影響，下列哪些敘述正確？</strong></p>
+            <input type="checkbox" name="opt3" value="A"> 吐瓦魯因海平面上升面臨國土消失<br>
+            <input type="checkbox" name="opt3" value="B"> 台灣的小雨日數有顯著減少趨勢<br>
+            <input type="checkbox" name="opt3" value="C"> 生物生活範圍會往低緯度方向移動<br>
+            <button class="btn-check" id="chk3" onclick="checkQ3()" disabled>檢查答案</button>
+            <button class="btn-retry" id="retry3" onclick="resetQ3()">重做本題</button>
+            <div id="f3" class="feedback"></div>
+        </div>
+
+        <div id="q4" class="question-card">
+            <p><strong>4. (填空) 西元2015年簽署的「<input type="text" id="ans4" placeholder="請填寫協定名稱">」，目標是將全球升溫控制在 2℃ 以內。</strong></p>
+            <button class="btn-check" id="chk4" onclick="checkQ4()">檢查答案</button>
+            <button class="btn-retry" id="retry4" onclick="resetQ4()">重做本題</button>
+            <div id="f4" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="nav-footer">
+        <a href="index.html" class="nav-btn btn-prev">← 上一頁</a>
+        <a href="./2.html" id="nextPage" class="nav-btn btn-next disabled">下一頁 →</a>
+    </div>
+
+    <script>
+        const status = [false, false, false, false];
+
+        // 監聽輸入啟用按鈕
+        document.addEventListener('change', function() {
+            document.getElementById('chk1').disabled = !document.querySelector('input[name="opt1"]:checked');
+            document.getElementById('chk2').disabled = !document.querySelector('input[name="opt2"]:checked');
+            document.getElementById('chk3').disabled = document.querySelectorAll('input[name="opt3"]:checked').length === 0;
+        });
+
+        function checkQ1() {
+            const val = document.querySelector('input[name="opt1"]:checked')?.value;
+            const card = document.getElementById('q1');
+            const fb = document.getElementById('f1');
+            lock(1);
+            if(val === 'B') {
+                setCorrect(1, card, fb, "正確！溫室氣體吸收長波紅外線。");
+            } else {
+                setIncorrect(1, card, fb, "錯誤。溫室氣體主要吸收地表輻射的紅外線。");
+            }
+        }
+
+        function checkQ2() {
+            const val = document.querySelector('input[name="opt2"]:checked')?.value;
+            const card = document.getElementById('q2');
+            const fb = document.getElementById('f2');
+            lock(2);
+            if(val === 'F') {
+                setCorrect(2, card, fb, "正確！沒有溫室氣體，溫度會降至零下十幾度。");
+            } else {
+                setIncorrect(2, card, fb, "錯誤。溫室氣體具有保溫功能。");
+            }
+        }
+
+        function checkQ3() {
+            const checks = document.querySelectorAll('input[name="opt3"]:checked');
+            const vals = Array.from(checks).map(c => c.value);
+            const card = document.getElementById('q3');
+            const fb = document.getElementById('f3');
+            lock(3);
+            if(vals.includes('A') && vals.includes('B') && !vals.includes('C')) {
+                setCorrect(3, card, fb, "正確！物種會往高緯度或高海拔移動。");
+            } else {
+                setIncorrect(3, card, fb, "答案不完整或有誤。請注意物種移動方向。");
+            }
+        }
+
+        function checkQ4() {
+            const val = document.getElementById('ans4').value.trim();
+            const card = document.getElementById('q4');
+            const fb = document.getElementById('f4');
+            if(!val) return;
+            lock(4);
+            if(val === "巴黎協定") {
+                setCorrect(4, card, fb, "正確！2015年巴黎協定接續京都議定書。");
+            } else {
+                setIncorrect(4, card, fb, "錯誤。請輸入「巴黎協定」。");
+            }
+        }
+
+        function lock(n) {
+            const card = document.getElementById('q'+n);
+            card.querySelectorAll('input').forEach(i => i.disabled = true);
+            document.getElementById('chk'+n).disabled = true;
+        }
+
+        function setCorrect(n, card, fb, text) {
+            card.className = "question-card correct";
+            fb.innerHTML = "✅ " + text;
+            fb.style.color = "#155724";
+            fb.style.display = "block";
+            status[n-1] = true;
+            checkAll();
+        }
+
+        function setIncorrect(n, card, fb, text) {
+            card.className = "question-card incorrect";
+            fb.innerHTML = "❌ " + text;
+            fb.style.color = "#721c24";
+            fb.style.display = "block";
+            document.getElementById('retry'+n).style.display = "inline-block";
+        }
+
+        function resetQ1() { resetBase(1, 'opt1'); }
+        function resetQ2() { resetBase(2, 'opt2'); }
+        function resetQ3() { resetBase(3, 'opt3'); }
+        function resetQ4() { 
+            resetBase(4, null);
+            document.getElementById('ans4').value = "";
+            document.getElementById('ans4').disabled = false;
+        }
+
+        function resetBase(n, name) {
+            const card = document.getElementById('q'+n);
+            card.className = "question-card";
+            document.getElementById('f'+n).style.display = "none";
+            document.getElementById('retry'+n).style.display = "none";
+            if(name) {
+                card.querySelectorAll('input').forEach(i => { i.disabled = false; i.checked = false; });
+            }
+            document.getElementById('chk'+n).disabled = (n !== 4);
+        }
+
+        function checkAll() {
+            if(status.every(s => s === true)) {
+                document.getElementById('nextPage').classList.remove('disabled');
+            }
+        }
+    </script>
+</body>
+</html>

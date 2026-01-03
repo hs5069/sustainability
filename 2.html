@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人與自然的互動 - 天然災害</title>
+    <style>
+        :root {
+            --kw-tectonic: #e63946; /* 板塊/地震 */
+            --kw-flood: #457b9d;    /* 洪水 */
+            --kw-landslide: #f4a261; /* 山崩/順向坡 */
+            --kw-debris: #6d6875;   /* 土石流 */
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fdfaf6;
+            color: #333;
+        }
+
+        .teaching-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        h2 { color: #2a3d45; border-left: 6px solid #2a3d45; padding-left: 15px; }
+
+        /* 關鍵字標示 */
+        .kw-t { color: var(--kw-tectonic); font-weight: bold; }
+        .kw-f { color: var(--kw-flood); font-weight: bold; }
+        .kw-l { color: var(--kw-landslide); font-weight: bold; }
+        .kw-d { color: var(--kw-debris); font-weight: bold; }
+
+        .image-box {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 25px auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* 互動題樣式 */
+        .quiz-wrapper {
+            background: #f1f3f5;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .q-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid transparent;
+        }
+
+        .correct { border-color: #28a745 !important; background-color: #d4edda !important; }
+        .incorrect { border-color: #dc3545 !important; background-color: #f8d7da !important; }
+
+        .feedback { display: none; margin-top: 10px; font-weight: bold; }
+
+        button {
+            padding: 8px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn-check { background: #2a3d45; color: white; }
+        .btn-check:disabled { background: #adb5bd; cursor: not-allowed; }
+        .btn-retry { background: #e76f51; color: white; display: none; margin-left: 10px; }
+
+        /* 導覽按鈕 */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .nav-link {
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-prev { background: #6c757d; color: white; }
+        .btn-next { background: #28a745; color: white; }
+        .btn-next.disabled { background: #ced4da; pointer-events: none; opacity: 0.6; }
+    </style>
+</head>
+<body>
+
+    <div class="teaching-content">
+        <h2>一、天然災害</h2>
+        <p>1. <span class="kw-t">地震</span>：臺灣處在<span class="kw-t">歐亞板塊與菲律賓海板塊</span>互相擠壓位置，地震(<span class="kw-t">逆斷層</span>)頻繁造成房屋倒塌、坡地崩塌和土壤液化等災害。</p>
+        <p>2. <span class="kw-f">洪水</span>：短時間內大量降水，引起河水暴漲而溢出河道氾濫的現象。原因包含：<br>
+        (1) <span class="kw-f">極端降雨</span>（颱風、梅雨）造成河川暴漲。<br>
+        (2) <span class="kw-f">人為開發</span>（都市水泥鋪面、水土保持破壞）導致地表逕流快、排水系統負荷超載。<br>
+        洪水氾濫時，河水搬運力強，將大量的礫石、泥沙搬運到下游沉積，在河道兩側形成<span class="kw-f">氾濫平原</span>。</p>
+        
+        <p>3. <span class="kw-l">山崩</span>：<br>
+        (1) 岩石或土壤受到重力作用，快速向下滑落。通常發生在大雨過後、地勢陡峭或<span class="kw-l">順向坡</span>。<br>
+        (2) <span class="kw-l">雨水的雙重效應</span>：滲入地下增加土體<span class="kw-l">重量</span>，同時<span class="kw-l">減少摩擦力</span>，使岩層易滑落。<br>
+        ＊當坡面與岩層傾斜面方向一致時稱為<span class="kw-l">順向坡</span>；不一致時稱為逆向坡。</p>
+
+        <p>4. <span class="kw-d">土石流</span>：<br>
+        (1) 山崩的一種，指大小不一的岩塊與泥砂，混合<span class="kw-d">大量水分</span>成為<span class="kw-d">流體狀</span>，向下快速流動。<br>
+        (2) 具有流動性，破壞力極強，<span class="kw-d">水</span>是關鍵潤滑劑。<br>
+        ★山崩是塊體滑動；土石流是流體狀態，速度與破壞力通常更強。</p>
+
+        <h2>二、人與自然的互動</h2>
+        <p>地震、颱風、洪水、山崩與土石流原本是大自然的現象，但若加上<span class="kw-t">人類過度開發</span>，經常導致災害問題更加複雜和嚴重。</p>
+
+        <img src="5.png" alt="天然災害示意圖" class="image-box">
+    </div>
+
+    <div class="quiz-wrapper">
+        <h3>⚡ 互動練習</h3>
+
+        <div id="q1" class="q-card">
+            <p><strong>1. (單選) 大雨過後容易發生山崩，主要原因除了增加土體重量外，還有什麼？</strong></p>
+            <input type="radio" name="opt1" value="A"> A. 增加岩層間的摩擦力<br>
+            <input type="radio" name="opt1" value="B"> B. 減少岩層間的摩擦力<br>
+            <input type="radio" name="opt1" value="C"> C. 改變岩層的傾斜方向<br>
+            <button class="btn-check" id="chk1" onclick="checkQ1()" disabled>檢查答案</button>
+            <button class="btn-retry" id="rty1" onclick="resetQ1()">重做本題</button>
+            <div id="fb1" class="feedback"></div>
+        </div>
+
+        <div id="q2" class="q-card">
+            <p><strong>2. (是非) 當坡面方向與岩層傾斜面方向一致時（順向坡），相較於逆向坡，通常更不容易發生滑落。</strong></p>
+            <input type="radio" name="opt2" value="T"> 正確<br>
+            <input type="radio" name="opt2" value="F"> 錯誤<br>
+            <button class="btn-check" id="chk2" onclick="checkQ2()" disabled>檢查答案</button>
+            <button class="btn-retry" id="rty2" onclick="resetQ2()">重做本題</button>
+            <div id="fb2" class="feedback"></div>
+        </div>
+
+        <div id="q3" class="q-card">
+            <p><strong>3. (多選) 下列哪些因素會加劇「洪水」災害的發生？</strong></p>
+            <input type="checkbox" name="opt3" value="A"> 都市水泥鋪面比例增加<br>
+            <input type="checkbox" name="opt3" value="B"> 山區進行水土保持工程<br>
+            <input type="checkbox" name="opt3" value="C"> 颱風帶來的極端降雨<br>
+            <button class="btn-check" id="chk3" onclick="checkQ3()" disabled>檢查答案</button>
+            <button class="btn-retry" id="rty3" onclick="resetQ3()">重做本題</button>
+            <div id="fb3" class="feedback"></div>
+        </div>
+
+        <div id="q4" class="q-card">
+            <p><strong>4. (填空) 土石流與一般山崩的不同點，在於土石流混合了大量水分，呈現「<input type="text" id="ans4" placeholder="請填寫狀態">」狀態。</strong></p>
+            <button class="btn-check" id="chk4" onclick="checkQ4()">檢查答案</button>
+            <button class="btn-retry" id="rty4" onclick="resetQ4()">重做本題</button>
+            <div id="fb4" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <a href="1.html" class="nav-link btn-prev">← 上一頁</a>
+        <a href="./3.html" id="nextBtn" class="nav-link btn-next disabled">下一頁 →</a>
+    </div>
+
+    <script>
+        const solved = [false, false, false, false];
+
+        // 監聽狀態
+        document.addEventListener('change', () => {
+            document.getElementById('chk1').disabled = !document.querySelector('input[name="opt1"]:checked');
+            document.getElementById('chk2').disabled = !document.querySelector('input[name="opt2"]:checked');
+            document.getElementById('chk3').disabled = document.querySelectorAll('input[name="opt3"]:checked').length === 0;
+        });
+
+        function markCorrect(n, fb, card, msg) {
+            card.className = "q-card correct";
+            fb.innerHTML = "✅ " + msg;
+            fb.style.color = "#155724";
+            fb.style.display = "block";
+            solved[n-1] = true;
+            checkNext();
+        }
+
+        function markIncorrect(n, fb, card, msg) {
+            card.className = "q-card incorrect";
+            fb.innerHTML = "❌ " + msg;
+            fb.style.color = "#721c24";
+            fb.style.display = "block";
+            document.getElementById('rty'+n).style.display = "inline-block";
+        }
+
+        function lock(n) {
+            const card = document.getElementById('q'+n);
+            card.querySelectorAll('input').forEach(i => i.disabled = true);
+            document.getElementById('chk'+n).disabled = true;
+        }
+
+        function checkQ1() {
+            const v = document.querySelector('input[name="opt1"]:checked').value;
+            lock(1);
+            if(v === 'B') markCorrect(1, fb1, q1, "正確！雨水會起到潤滑作用減少摩擦。");
+            else markIncorrect(1, fb1, q1, "錯誤。雨水會減少摩擦力使岩層易滑。");
+        }
+
+        function checkQ2() {
+            const v = document.querySelector('input[name="opt2"]:checked').value;
+            lock(2);
+            if(v === 'F') markCorrect(2, fb2, q2, "正確！順向坡因為層面與坡面一致，非常容易發生滑落。");
+            else markIncorrect(2, fb2, q2, "錯誤。順向坡更容易發生山崩災情。");
+        }
+
+        function checkQ3() {
+            const chks = document.querySelectorAll('input[name="opt3"]:checked');
+            const vals = Array.from(chks).map(c => c.value);
+            lock(3);
+            if(vals.includes('A') && vals.includes('C') && !vals.includes('B')) {
+                markCorrect(3, fb3, q3, "完全正確！人為開發與天氣均是因素。");
+            } else {
+                markIncorrect(3, fb3, q3, "選項不完全正確。水土保持應能減緩洪水。");
+            }
+        }
+
+        function checkQ4() {
+            const v = document.getElementById('ans4').value.trim();
+            if(!v) return;
+            lock(4);
+            if(v === '流體狀' || v === '流體') markCorrect(4, fb4, q4, "正確！這是土石流高流動性的關鍵。");
+            else markIncorrect(4, fb4, q4, "請填寫「流體狀」或「流體」。");
+        }
+
+        function resetBase(n, name) {
+            const card = document.getElementById('q'+n);
+            card.className = "q-card";
+            document.getElementById('fb'+n).style.display = "none";
+            document.getElementById('rty'+n).style.display = "none";
+            if(name) {
+                card.querySelectorAll('input').forEach(i => { i.disabled = false; i.checked = false; });
+            }
+        }
+
+        function resetQ1() { resetBase(1, 'opt1'); }
+        function resetQ2() { resetBase(2, 'opt2'); }
+        function resetQ3() { resetBase(3, 'opt3'); }
+        function resetQ4() { 
+            resetBase(4, null); 
+            document.getElementById('ans4').disabled = false;
+            document.getElementById('ans4').value = "";
+        }
+
+        function checkNext() {
+            if(solved.every(s => s === true)) {
+                document.getElementById('nextBtn').classList.remove('disabled');
+            }
+        }
+    </script>
+</body>
+</html>
