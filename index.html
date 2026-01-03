@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋與大氣的互動</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --keyword1: #e63946; /* 紅色 - 潮汐/引力 */
+            --keyword2: #f4a261; /* 橘色 - 波浪/動能 */
+            --keyword3: #2a9d8f; /* 綠色 - 洋流/風 */
+            --keyword4: #457b9d; /* 藍色 - 黑潮/氣候 */
+        }
+
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+
+        .content-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h2 { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
+        
+        /* 關鍵字顏色 */
+        .kw1 { color: var(--keyword1); font-weight: bold; }
+        .kw2 { color: var(--keyword2); font-weight: bold; }
+        .kw3 { color: var(--keyword3); font-weight: bold; }
+        .kw4 { color: var(--keyword4); font-weight: bold; }
+
+        .teaching-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+        }
+
+        /* 互動題目樣式 */
+        .quiz-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px solid #dee2e6;
+        }
+
+        .question-box {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .correct {
+            border: 2px solid #28a745 !important;
+            background-color: #d4edda !important;
+        }
+
+        .incorrect {
+            border: 2px solid #dc3545 !important;
+            background-color: #f8d7da !important;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background: var(--primary-color);
+            color: white;
+            margin-top: 10px;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .retry-btn {
+            background: #6c757d;
+            margin-left: 10px;
+            display: none;
+        }
+
+        /* 導覽按鈕 */
+        .footer-nav {
+            text-align: right;
+            margin-top: 40px;
+            padding: 20px;
+        }
+
+        .next-page {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            background: #28a745;
+            color: white;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .next-page.disabled {
+            background: #ccc;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-section">
+        <h2>一、潮汐與波浪</h2>
+        <p>一、<span class="kw1">潮汐</span>：同一地點海水面受到<span class="kw1">月球引力</span>，造成海面規律升降現象。</p>
+        <p>二、<span class="kw2">波浪</span>：<br>
+        1. <span class="kw2">風吹動</span>水面，將動能傳遞給水體，使得水面產生波動，即為波浪。<br>
+        2. 當波浪靠近陸地，會受到海底的<span class="kw2">摩擦力</span>影響而降低底層的波速，最終形成白浪滔滔的<span class="kw2">碎浪</span>。</p>
+        <p>三、<span class="kw3">洋流</span>：<br>
+        1. 風朝固定方向穩定吹拂，使得大規模的表層海水沿著固定方向運動，稱為洋流。<br>
+        2. 低緯度的<span class="kw3">赤道東風帶</span>及中緯度的<span class="kw3">西風帶</span>，都會在海洋表層形成穩定的洋流系統。<br>
+        3. 赤道東風吹拂下，溫度較高表層海水由東往西流；受西太平洋(亞洲)陸地阻擋向北轉向，形成由南向北的暖流稱為<span class="kw4">黑潮</span>；而中高緯度地區溫度較低的洋流則在西風的吹拂下，先向東移動，再往南回到赤道，形成循環的洋流系統，調節地球熱量。<br>
+        4. 若赤道東風減弱，造成台灣暖冬、春雨偏多、東南亞/澳洲乾旱，東太平洋(美洲)多雨等異常氣候，稱為<span class="kw4">聖嬰現象</span>(常發生在耶誕節前後)，此為一種全球性氣候異常。</p>
+        
+        <img src="1.png" alt="海洋動力示意圖" class="teaching-img">
+    </div>
+
+    <div class="content-section">
+        <h2>二、台灣周圍洋流</h2>
+        <p>5. <span class="kw4">台灣周圍洋流</span><br>
+        (1) <span class="kw4">夏季</span>：<br>
+        a. 東部海域受到北赤道洋流影響，有<span class="kw4">黑潮</span>流經，使東岸較為溫暖潮溼。<br>
+        b. 西部海域，<span class="kw4">西南季風</span>帶動溫暖的南海海流流入臺灣海峽。<br>
+        (2) <span class="kw4">冬季</span>：<br>
+        a. 東部海域受到北赤道洋流影響，有黑潮流經，使東岸較為溫暖潮溼。<br>
+        b. 西部海域，<span class="kw4">東北季風</span>帶動中國北方沿岸的海水由北往南流入臺灣海峽，形成溫度較低的<span class="kw4">中國沿岸流</span>。<span class="kw4">烏魚</span>沿著中國沿岸流南下產卵，是台灣捕撈烏魚的旺季。</p>
+        
+        <img src="2.png" alt="台灣周邊洋流圖" class="teaching-img">
+    </div>
+
+    <div class="quiz-container">
+        <h3>互動練習題</h3>
+
+        <div id="q1" class="question-box">
+            <p>1. (單選) 造成「潮汐」現象最主要的動力來源是什麼？</p>
+            <input type="radio" name="q1" value="A"> A. 地底地震<br>
+            <input type="radio" name="q1" value="B"> B. 月球引力<br>
+            <input type="radio" name="q1" value="C"> C. 季風吹拂<br>
+            <button onclick="checkQ1()" id="btn1" disabled>檢查答案</button>
+            <button onclick="resetQ1()" id="retry1" class="retry-btn">重做本題</button>
+            <div id="f1" class="feedback"></div>
+        </div>
+
+        <div id="q2" class="question-box">
+            <p>2. (多選) 關於「聖嬰現象」發生時的敘述，哪些是正確的？（請勾選所有正確項）</p>
+            <input type="checkbox" name="q2" value="A"> 台灣可能出現暖冬<br>
+            <input type="checkbox" name="q2" value="B"> 赤道東風增強<br>
+            <input type="checkbox" name="q2" value="C"> 澳洲地區易發生乾旱<br>
+            <button onclick="checkQ2()" id="btn2" disabled>檢查答案</button>
+            <button onclick="resetQ2()" id="retry2" class="retry-btn">重做本題</button>
+            <div id="f2" class="feedback"></div>
+        </div>
+
+        <div id="q3" class="question-box">
+            <p>3. (是非) 黑潮是屬於溫度較低的寒流，主要由北向南流經台灣東部海域。</p>
+            <input type="radio" name="q3" value="T"> 正確<br>
+            <input type="radio" name="q3" value="F"> 錯誤<br>
+            <button onclick="checkQ3()" id="btn3" disabled>檢查答案</button>
+            <button onclick="resetQ3()" id="retry3" class="retry-btn">重做本題</button>
+            <div id="f3" class="feedback"></div>
+        </div>
+
+        <div id="q4" class="question-box">
+            <p>4. (填空) 台灣冬季時，東北季風帶動低溫的海水南下進入台灣海峽，此洋流稱為「<input type="text" id="q4_input" placeholder="請輸入答案">」。</p>
+            <button onclick="checkQ4()" id="btn4">檢查答案</button>
+            <button onclick="resetQ4()" id="retry4" class="retry-btn">重做本題</button>
+            <div id="f4" class="feedback"></div>
+        </div>
+    </div>
+
+    <div class="footer-nav">
+        <a href="./1.html" id="nextPage" class="next-page disabled">下一頁 →</a>
+    </div>
+
+    <script>
+        const passStatus = [false, false, false, false];
+
+        // 監聽所有輸入以啟用按鈕
+        document.addEventListener('change', function() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            document.getElementById('btn1').disabled = !q1;
+
+            const q2 = document.querySelectorAll('input[name="q2"]:checked');
+            document.getElementById('btn2').disabled = q2.length === 0;
+
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            document.getElementById('btn3').disabled = !q3;
+        });
+
+        function checkQ1() {
+            const ans = document.querySelector('input[name="q1"]:checked')?.value;
+            const box = document.getElementById('q1');
+            const fb = document.getElementById('f1');
+            lockQuestion('q1', 'btn1');
+            
+            if(ans === 'B') {
+                box.className = 'question-box correct';
+                fb.innerHTML = '正確！月球引力是造成潮汐主因。';
+                fb.style.color = 'green';
+                passStatus[0] = true;
+            } else {
+                box.className = 'question-box incorrect';
+                fb.innerHTML = '錯誤，請再試一次。提示：與天體引力有關。';
+                fb.style.color = 'red';
+                document.getElementById('retry1').style.display = 'inline-block';
+            }
+            fb.style.display = 'block';
+            checkAllDone();
+        }
+
+        function checkQ2() {
+            const checkboxes = document.querySelectorAll('input[name="q2"]:checked');
+            const values = Array.from(checkboxes).map(cb => cb.value);
+            const box = document.getElementById('q2');
+            const fb = document.getElementById('f2');
+            lockQuestion('q2', 'btn2');
+
+            if(values.includes('A') && values.includes('C') && values.length === 2) {
+                box.className = 'question-box correct';
+                fb.innerHTML = '完全正確！聖嬰現象會導致東風減弱並影響全球氣候。';
+                fb.style.color = 'green';
+                passStatus[1] = true;
+            } else {
+                box.className = 'question-box incorrect';
+                fb.innerHTML = '部分答案錯誤。提示：聖嬰現象時東風會減弱。';
+                fb.style.color = 'red';
+                document.getElementById('retry2').style.display = 'inline-block';
+            }
+            fb.style.display = 'block';
+            checkAllDone();
+        }
+
+        function checkQ3() {
+            const ans = document.querySelector('input[name="q3"]:checked')?.value;
+            const box = document.getElementById('q3');
+            const fb = document.getElementById('f3');
+            lockQuestion('q3', 'btn3');
+
+            if(ans === 'F') {
+                box.className = 'question-box correct';
+                fb.innerHTML = '正確！黑潮是從低緯度流向高緯度的「暖流」。';
+                fb.style.color = 'green';
+                passStatus[2] = true;
+            } else {
+                box.className = 'question-box incorrect';
+                fb.innerHTML = '錯誤。黑潮是由南往北流動的溫暖海水。';
+                fb.style.color = 'red';
+                document.getElementById('retry3').style.display = 'inline-block';
+            }
+            fb.style.display = 'block';
+            checkAllDone();
+        }
+
+        function checkQ4() {
+            const ans = document.getElementById('q4_input').value.trim();
+            const box = document.getElementById('q4');
+            const fb = document.getElementById('f4');
+            
+            if(!ans) return alert("請輸入答案");
+            
+            lockQuestion('q4', 'btn4');
+            if(ans === '中國沿岸流') {
+                box.className = 'question-box correct';
+                fb.innerHTML = '正確！這也是烏魚隨之南下的洋流。';
+                fb.style.color = 'green';
+                passStatus[3] = true;
+            } else {
+                box.className = 'question-box incorrect';
+                fb.innerHTML = '答案錯誤，請輸入「中國沿岸流」。';
+                fb.style.color = 'red';
+                document.getElementById('retry4').style.display = 'inline-block';
+            }
+            fb.style.display = 'block';
+            checkAllDone();
+        }
+
+        function lockQuestion(qId, btnId) {
+            const inputs = document.querySelectorAll(`#${qId} input`);
+            inputs.forEach(i => i.disabled = true);
+            document.getElementById(btnId).disabled = true;
+        }
+
+        function resetQ1() { resetBase('q1', 'btn1', 'retry1', 'f1', 'input[name="q1"]'); }
+        function resetQ2() { resetBase('q2', 'btn2', 'retry2', 'f2', 'input[name="q2"]'); }
+        function resetQ3() { resetBase('q3', 'btn3', 'retry3', 'f3', 'input[name="q3"]'); }
+        function resetQ4() { 
+            resetBase('q4', 'btn4', 'retry4', 'f4', null); 
+            document.getElementById('q4_input').disabled = false;
+            document.getElementById('q4_input').value = '';
+        }
+
+        function resetBase(qId, btnId, retryId, fbId, inputSelector) {
+            document.getElementById(qId).className = 'question-box';
+            document.getElementById(retryId).style.display = 'none';
+            document.getElementById(fbId).style.display = 'none';
+            if(inputSelector) {
+                const inputs = document.querySelectorAll(inputSelector);
+                inputs.forEach(i => { i.disabled = false; i.checked = false; });
+            }
+        }
+
+        function checkAllDone() {
+            if (passStatus.every(s => s === true)) {
+                document.getElementById('nextPage').classList.remove('disabled');
+            }
+        }
+    </script>
+</body>
+</html>
